@@ -45,7 +45,16 @@ function changeColor(choice) {
   color = choice;
 }
 
-document.querySelector('body').addEventListener('click', () => {
-  if (click) click = false;
-  else click = true;
+const mode = document.querySelector('.mode');
+
+document.querySelector('body').addEventListener('click', (e) => {
+  if (e.target.tagName != 'BUTTON') {
+    if (click) {
+      click = false;
+      mode.innerText = 'Click to color';
+    } else {
+      click = true;
+      mode.innerText = 'Click to stop coloring';
+    }
+  }
 });
