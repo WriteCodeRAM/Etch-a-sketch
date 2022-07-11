@@ -1,7 +1,142 @@
-.board{
-    width: 500px;
-    height: 500px;
-    display: grid;
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Caveat', cursive;
 }
+
+
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+ }
+
+
+.title{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+
+}
+
+.board{
+    width: 80%;
+    height: 80%;
+    display: grid;
+    box-shadow:
+    inset 0 -3em 3em rgba(0,0,0,0.1),
+          0 0  0 2px rgb(255,255,255),
+          0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+.board:hover{
+    cursor: pointer;
+}
+
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    min-height: 300px;
+    width: 60vw;
+    height: 60vw;
+    max-width: 600px;
+    max-height: 600px;
+
+}
+
+button{
+    padding: .3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: .5em;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.2s;
+    font-size: large;
+}
+
+.buttons{
+    margin: 10px 0 10px 0; 
+}
+
+.blackBtn{
+    background-color: black;
+    color: antiquewhite;
+}
+
+.rainbowBtn{
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+}
+
+.resetBtn{
+    background-color: black;
+    color: antiquewhite;
+}
+
+.span{
+    color: rgba(79, 220, 74, 1);
+}
+
+.offSpan{
+    color: rgba(255, 0, 0, 1);
+}
+button:hover{
+    cursor: pointer;
+}
+
+h1{
+    padding: 10px 0 20px 0 
+}
+
+.mode{
+    font-weight: bolder;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+body{
+    /* background-color: rgb(244, 235, 224); */
+    background-color: white;
+}
+
+
+
+.sizeInput{
+    order: 2;
+}
+
+/* -------------------------------------------- */
+
+/* .buttons {
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    /* font-size: 16px;
+    margin: 4px 2px;
+     */
+  /* } */ 
 
 

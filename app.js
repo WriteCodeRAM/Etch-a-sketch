@@ -1,6 +1,8 @@
 let color = 'black';
+let click = false;
 
-let click = true;
+const mode = document.querySelector('.mode');
+const buttons = document.querySelector('.buttons');
 
 function createBoard(size) {
   let board = document.querySelector('.board');
@@ -14,7 +16,7 @@ function createBoard(size) {
   let amount = size * size;
   for (let i = 0; i < amount; i++) {
     let square = document.createElement('div');
-    square.style.backgroundColor = 'black';
+    square.style.backgroundColor = 'white';
     board.insertAdjacentElement('beforeend', square);
 
     square.addEventListener('mouseover', colorSquare);
@@ -29,11 +31,12 @@ function changeBoard(input) {
   } else {
     alert('must enter a value between 2 and 100');
   }
+  document.getElementById('sizeInput').placeholder = 16;
 }
 
 function colorSquare() {
   if (click) {
-    if (color === 'random') {
+    if (color === 'rainbow') {
       this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
     } else {
       this.style.backgroundColor = color;
@@ -45,16 +48,20 @@ function changeColor(choice) {
   color = choice;
 }
 
-const mode = document.querySelector('.mode');
-
 document.querySelector('body').addEventListener('click', (e) => {
-  if (e.target.tagName != 'BUTTON') {
+  if (e.target.tagName != 'BUTTON' && e.target.nodeName != 'INPUT') {
     if (click) {
       click = false;
-      mode.innerText = 'Click to color';
+      mode.classList.remove('span');
+      mode.classList.add('offSpan');
+      mode.innerText = 'Color mode: OFF  (click to color)';
     } else {
       click = true;
-      mode.innerText = 'Click to stop coloring';
+      mode.classList.remove('offSpan');
+      mode.classList.add('span');
+      mode.innerText = 'Color mode: ON  (click to stop coloring)';
     }
   }
 });
+
+buttons.addEventListener('click', () => {});
