@@ -4,26 +4,36 @@ let click = false;
 const mode = document.querySelector('.mode');
 const buttons = document.querySelector('.buttons');
 
-function createBoard(size) {
+function createBoard(size, color) {
   let board = document.querySelector('.board');
   let squares = board.querySelectorAll('div');
+  color = prompt(
+    'Would you like your canvas to be white or black?'
+  ).toLowerCase();
+
+  if (color !== 'white' && color !== 'black') {
+    alert('setting canvas to default color: White.');
+    color = 'white';
+  } else {
+    color = color;
+  }
 
   squares.forEach((div) => div.remove());
 
-  board.style.gridTemplateColumns = `repeat(${size}, 1fr)`; // makes 16 or size amt of cols and each column  is 1/16 of the container
+  board.style.gridTemplateColumns = `repeat(${size}, 1fr)`; // makes 16 or size amt of cols and each column is 1/16 of the container
   board.style.gridTemplateRows = `repeat(${size}, 1fr)`; // makes 16  or size amt of rows and each row  is 1/16 of the container
 
   let amount = size * size;
   for (let i = 0; i < amount; i++) {
     let square = document.createElement('div');
-    square.style.backgroundColor = 'white';
+    square.style.backgroundColor = color;
     board.insertAdjacentElement('beforeend', square);
 
     square.addEventListener('mouseover', colorSquare);
   }
 }
 
-createBoard(16);
+createBoard(70);
 
 function changeBoard(input) {
   if (input >= 2 && input <= 100) {
@@ -44,8 +54,11 @@ function colorSquare() {
   }
 }
 
+const testing = document.querySelector('.test');
+
 function changeColor(choice) {
   color = choice;
+  testing.innerText = `Color: ${color.toUpperCase()}`;
 }
 
 document.querySelector('body').addEventListener('click', (e) => {

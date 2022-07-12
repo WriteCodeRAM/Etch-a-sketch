@@ -15,20 +15,22 @@
     
     <div class="flex-container">
         <div class="title"><h1>Doodle!</h1></div>
+        <div class="test">Color: BLACK</div>
         <div class="mode"> Click once to start coloring!</div>
+        
            
         <div class="content">
             <div class="board"></div>
             <div class="buttons">
                 <button class="blackBtn" onclick="changeColor('black')">Black</button>
-                <button  onclick="changeColor('white')">Eraser</button>
+                <button  onclick="changeColor('white')">White</button>
                 <button class="rainbowBtn" onclick="changeColor('rainbow')">Rainbow</button>
         
-                <button class="resetBtn" onclick="changeBoard(16)">Reset</button>
+                <button class="resetBtn" onclick="changeBoard(70)">Reset</button>
                 <input type="color" name="" id="colorPicker" onchange="changeColor(this.value)">
                
             </div>
-            <input type="text"  name="" id="sizeInput" placeholder="enter between 2-100" value="16" onchange="changeBoard(this.value)">
+            <input type="text"  name="" id="sizeInput" placeholder="enter between 2-100" value="70" onchange="changeBoard(this.value)">
             <button>Set Size</button>
         </div>
        

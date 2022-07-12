@@ -121,7 +121,9 @@ body{
 }
 
 
-
+.test{
+    font-size: large;
+}
 .sizeInput{
     order: 2;
 }
